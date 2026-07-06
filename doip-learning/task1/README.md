@@ -1,6 +1,7 @@
 # 任务 1：DoIP 基础 + 协议文档
 
-> 对应学习计划第 1 周。完成后应能用 Wireshark 区分 UDP 发现与 TCP 诊断传输，并画出完整 DoIP 时序图。
+> 对应学习计划第 1 周。完成后应能用 Wireshark 区分 UDP 发现与 TCP 诊断传输，并画出完整 DoIP 时序图。  
+> **总览**：[../LEARNING_PLAN.md](../LEARNING_PLAN.md)
 
 ## 任务清单
 

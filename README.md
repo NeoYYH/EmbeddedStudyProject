@@ -2,6 +2,8 @@
 
 车载嵌入式与诊断学习仓库。当前进行 **DoIP 以太网诊断** 学习计划。
 
+**完整任务总览（7 个子任务）**：[doip-learning/LEARNING_PLAN.md](doip-learning/LEARNING_PLAN.md)
+
 ## 一键跑全部任务（Windows）
 
 ```powershell
