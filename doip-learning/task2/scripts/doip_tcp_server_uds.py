@@ -25,6 +25,7 @@ from uds_ecu import UdsEcu
 
 DEFAULT_BIND = "0.0.0.0"
 DEFAULT_LOGICAL_ADDRESS = 0x0E00
+ALLOWED_TESTER_ADDRESS = 0x0E80
 
 
 def handle_routing_activation(header: DoIPHeader) -> bytes:
@@ -34,6 +35,13 @@ def handle_routing_activation(header: DoIPHeader) -> bytes:
         f"[TCP] Routing Activation: tester=0x{source_address:04X}, "
         f"type=0x{activation_type:02X}"
     )
+    if source_address != ALLOWED_TESTER_ADDRESS:
+        print(f"[TCP] Rejecting unknown tester address 0x{source_address:04X}")
+        return build_routing_activation_response(
+            client_logical_address=source_address,
+            logical_address=DEFAULT_LOGICAL_ADDRESS,
+            response_code=0x00,
+        )
     return build_routing_activation_response(
         client_logical_address=source_address,
         logical_address=DEFAULT_LOGICAL_ADDRESS,
