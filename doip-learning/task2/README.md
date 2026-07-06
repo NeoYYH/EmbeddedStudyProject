@@ -1,7 +1,7 @@
 # 任务 2：DoIP 模拟器 + UDS 业务逻辑
 
 > 对应学习计划第 2 周。任务 1 已会看 DoIP 封装；任务 2 把 **CAN UDS 经验接到以太网** 上。  
-> **全部任务总览**：[../README.md](../README.md)（在 `doip-learning/` 根目录，不在 task3 内）
+> **全部任务总览**：[../README.md](../README.md)
 
 ## 与任务 1 的区别
 
