@@ -304,17 +304,17 @@ py doip_client_faults.py --host 127.0.0.1
 
 ```
 doip-learning/
-├── LEARNING_PLAN.md          ← 本文件（总览）
+├── README.md                 ← 本文件（全部任务总览）
 ├── run_all_tasks.py          ← 一键跑任务 1+2+3 脚本部分
 ├── run_all_tasks.bat
-├── task1/                    ← 第 1 周
+├── task1/                    ← 第 1 周（仅任务 1 详情）
 │   ├── README.md
 │   ├── docs/
 │   └── scripts/
-├── task2/                    ← 第 2 周
+├── task2/                    ← 第 2 周（仅任务 2 详情）
 │   ├── README.md
 │   └── scripts/
-└── task3/                    ← 第 3 周
+└── task3/                    ← 第 3 周（仅任务 3 详情）
     ├── README.md
     ├── docs/
     └── scripts/
