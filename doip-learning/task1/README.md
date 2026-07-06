@@ -11,26 +11,46 @@
 
 ## 快速开始（任务 1.1）
 
+### 第 0 步：安装 Wireshark（必做，先于脚本）
+
+任务 1.1 的目标是 **用 Wireshark 看包**，不是只跑通 Python 脚本。请先安装：
+
+| 系统 | 做法 |
+|------|------|
+| Windows | [官网安装包](https://www.wireshark.org/download.html) + **Npcap**（含 Loopback 适配器） |
+| Linux | `sudo apt install wireshark tshark`，用户加入 `wireshark` 组 |
+| macOS | 官网 dmg + 按提示安装 **ChmodBPF** |
+
+详细步骤、权限与自检：**[docs/wireshark_install.md](docs/wireshark_install.md)**
+
+安装完成后：打开 Wireshark → 选 **Loopback (lo)** → 能抓到 `127.0.0.1` 流量再继续。
+
 ### 前置条件
 
+- Wireshark 4.x（已安装且能抓回环网卡）
 - Python 3.8+
-- Wireshark（本机安装，用于抓 `lo` 或实际网卡）
 
-### 终端 1：启动 DoIP 模拟 ECU
+### 第 1 步：开 Wireshark 并开始抓包
+
+1. 选择 **Loopback: lo**（Windows 为 Npcap Loopback Adapter）
+2. 点击开始抓包
+3. 显示过滤器可先留空，抓完再用：`udp.port == 13400 || tcp.port == 13400`
+
+### 第 2 步：终端 1 — 启动 DoIP 模拟 ECU
 
 ```bash
 cd doip-learning/task1/scripts
 python3 doip_udp_server.py
 ```
 
-### 终端 2：启动 TCP 服务
+### 第 3 步：终端 2 — 启动 TCP 服务
 
 ```bash
 cd doip-learning/task1/scripts
 python3 doip_tcp_server.py
 ```
 
-### 终端 3：运行客户端（触发完整流程）
+### 第 4 步：终端 3 — 运行客户端（触发完整流程）
 
 ```bash
 cd doip-learning/task1/scripts
@@ -102,6 +122,7 @@ Wireshark 过滤器：`tcp.port == 13402 or udp.port == 13401`
 task1/
 ├── README.md                 # 本文件
 ├── docs/
+│   ├── wireshark_install.md  # 安装 Wireshark（第 0 步）
 │   ├── wireshark_guide.md    # 抓包逐步指南
 │   ├── doip_message_format.md
 │   ├── doip_timing_diagram.md
