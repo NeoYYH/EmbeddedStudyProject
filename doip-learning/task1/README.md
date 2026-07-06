@@ -96,6 +96,8 @@ Wireshark 过滤器：`tcp.port == 13402 or udp.port == 13401`
 
 ## 任务 1.2：协议精读与时序图
 
+**还没有 ISO 13400-2 PDF？** 先看 **[docs/iso13400_reading_guide.md](docs/iso13400_reading_guide.md)**（获取途径 + 章节阅读顺序 + 无 PDF 替代路径）。
+
 1. 阅读 `docs/doip_message_format.md`（本仓库整理的 ISO 13400-2 要点）。
 2. 对照 `docs/doip_timing_diagram.md` 中的 Mermaid 时序图，**手绘一版**并标注每步 Payload Type。
 3. 自测：不看文档回答 README 末尾 5 道题。
@@ -122,6 +124,7 @@ Wireshark 过滤器：`tcp.port == 13402 or udp.port == 13401`
 task1/
 ├── README.md                 # 本文件
 ├── docs/
+│   ├── iso13400_reading_guide.md  # 标准获取 + 精读章节顺序
 │   ├── wireshark_install.md  # 安装 Wireshark（第 0 步）
 │   ├── wireshark_guide.md    # 抓包逐步指南
 │   ├── doip_message_format.md
